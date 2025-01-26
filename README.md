@@ -44,53 +44,51 @@ The API will be accessible at https://localhost:7050/swagger/index.html (or the 
 ## Usage Examples
 
 Below are some sample JSON payloads for testing the API via Swagger or Postman.
-Register as User
-Endpoint: POST /api/UserRegister/register
+
+### Register as User
+**Endpoint**: `POST /api/UserRegister/register`
+```json
 {
   "name": "testName",
   "email": "testmail@hotmail.com",
   "password": "testpassword"
 }
-
-Register as Admin
-Endpoint: POST /api/AdminRegister/register
+```
+### Register as Admin
+**Endpoint**: `POST /api/AdminRegister/register`
+```json
 {
   "name": "testAdmin",
   "email": "testadminmail@msn.com",
   "password": "test123"
 }
-
-Login as User or Admin // Use same username and password with registered, you will take token with role (admin,user)
-Endpoint: POST /api/Token/Login
+```
+### Login as User or Admin // Use same username and password with registered, you will take token with role (admin,user)
+**Endpoint**: `POST /api/Token/Login`
+```json
 {
   "email": "testmail@hotmail.com",
   "password": "testpassword"
 } 
-
+```
 //just copy token and paste it in Authorize on the right-top to access feature requests (paste only token {token})
 
---Transaction--
+### ---*Transaction*----
 
-Add Transaction
-Endpoint: POST /api/Transaction
+
+### Add Transaction
+**Endpoint**: `POST /api/Transaction`
+```json
 {
   "amount": 0,
   "date": "2025-01-26T20:21:25.815Z",
   "category": "string",
   "description": "string"
 }
-
-Add Transaction
-Endpoint: POST /api/Transaction
-{
-  "amount": 0,
-  "date": "2025-01-26T20:21:25.815Z",
-  "category": "string",
-  "description": "string"
-}
-
-Change Transaction
-Endpoint: PUT /api/Transaction
+ ``` 
+### Change Transaction
+**Endpoint:** `PUT /api/Transaction`
+```json
 {
   "id": 0,
   "amount": 0,
