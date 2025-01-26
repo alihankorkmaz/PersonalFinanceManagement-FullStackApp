@@ -7,14 +7,14 @@ This is a REST API designed for personal finance management. It includes feature
 ## Features
 
 - **User Authentication**: Register and login as a user or admin.
-- **Admin Management**: Admins can manage users and their transactions.
-- **User Self-Management**: Users can update their profiles and manage their accounts.
+- **Admin Management**: Admins can manage users and their own profile.
+- **User Self-Management**: Users can update their profiles and manage transactions.
 - **JWT Authentication**: Secure endpoints using JSON Web Tokens.
 
 ## Technologies Used
 
 - **Backend**: ASP.NET Core
-- **Database**: Microsoft SQL Server
+- **Database**: Microsoft SQLite Server
 - **Authentication**: JWT (JSON Web Tokens)
 
 ## Prerequisites
