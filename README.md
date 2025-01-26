@@ -22,9 +22,8 @@ This is a REST API designed for personal finance management. It includes feature
 Before running this project, ensure you have the following installed:
 
 - .NET 6 SDK or later
-- SQL Server
+- SQL Lite Server
 - Visual Studio or Visual Studio Code
-- Postman (Optional, for API testing)
 
 ## Installation
 
