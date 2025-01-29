@@ -27,6 +27,20 @@ namespace PersonalFinanceManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AdminSettings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    RegistrationKey = table.Column<string>(type: "TEXT", nullable: false),
+                    ExpirationTime = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminSettings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -75,6 +89,9 @@ namespace PersonalFinanceManagement.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Admins");
+
+            migrationBuilder.DropTable(
+                name: "AdminSettings");
 
             migrationBuilder.DropTable(
                 name: "Transactions");

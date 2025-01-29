@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace PersonalFinanceManagement.Migrations
 {
     [DbContext(typeof(FinanceContext))]
-    [Migration("20250126163145_InitialCreate")]
+    [Migration("20250128214820_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace PersonalFinanceManagement.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
-            modelBuilder.Entity("PersonalFinanceManagement.Admin", b =>
+            modelBuilder.Entity("PersonalFinanceManagement.Models.Admin", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,25 @@ namespace PersonalFinanceManagement.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("PersonalFinanceManagement.Transaction", b =>
+            modelBuilder.Entity("PersonalFinanceManagement.Models.AdminSettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ExpirationTime")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RegistrationKey")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminSettings");
+                });
+
+            modelBuilder.Entity("PersonalFinanceManagement.Models.Transaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +90,7 @@ namespace PersonalFinanceManagement.Migrations
                     b.ToTable("Transactions");
                 });
 
-            modelBuilder.Entity("PersonalFinanceManagement.User", b =>
+            modelBuilder.Entity("PersonalFinanceManagement.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,9 +113,9 @@ namespace PersonalFinanceManagement.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PersonalFinanceManagement.Transaction", b =>
+            modelBuilder.Entity("PersonalFinanceManagement.Models.Transaction", b =>
                 {
-                    b.HasOne("PersonalFinanceManagement.User", "User")
+                    b.HasOne("PersonalFinanceManagement.Models.User", "User")
                         .WithMany("Transactions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -106,7 +124,7 @@ namespace PersonalFinanceManagement.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PersonalFinanceManagement.User", b =>
+            modelBuilder.Entity("PersonalFinanceManagement.Models.User", b =>
                 {
                     b.Navigation("Transactions");
                 });
