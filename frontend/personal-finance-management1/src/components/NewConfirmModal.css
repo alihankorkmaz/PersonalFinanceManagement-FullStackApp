@@ -1,0 +1,46 @@
+.new-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.new-modal {
+  background: #ffcccc; /* Light red background for delete confirmation */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.new-modal-actions button {
+  background-color: #ff4d4d; /* Red button for confirmation */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.new-modal-actions button:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+.new-modal-actions button.cancel {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+
+.new-modal-actions button.cancel:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca; 
+}
